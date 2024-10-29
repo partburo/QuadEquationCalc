@@ -6,6 +6,8 @@ namespace QuadEquationCalc.UnitTests
     [TestFixture]
     public class CalculationTests
     {
+        #region Метод GetDiscriminant()
+
         [TestCase(new double[] { 2, 5, -3.5 })]
         [TestCase(new double[] { 1, 4, 1 })]
         public void GetDiscriminant_ReturnsGreaterThanZero(double[] arguments)
@@ -38,6 +40,10 @@ namespace QuadEquationCalc.UnitTests
 
             ClassicAssert.AreEqual(0, result);
         }
+
+        #endregion
+
+        #region Метод GetRoots()
 
         [Test]
         public void GetRoots_DiscriminantIsGreaterThanZero_ReturnsTwoRoots()
@@ -78,5 +84,7 @@ namespace QuadEquationCalc.UnitTests
                 ClassicAssert.AreEqual(-1, calculation.FirstRoot);
             });
         }
+
+        #endregion
     }
 }
